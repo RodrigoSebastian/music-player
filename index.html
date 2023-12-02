@@ -3,45 +3,56 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title id="title">Lost in the City Lights - Cosmo Sheldrake</title>
 
     <link rel="stylesheet" href="./css/style.css" />
+    <link rel="shortcut icon" href="./images/disc.svg" type="image/x-icon" />
   </head>
   <body>
     <main>
       <article class="song-box">
         <figure class="song-image">
-          <img src="./images/cover-1.png" alt="Song cover" />
+          <img src="" alt="Song cover" id="song-cover" />
         </figure>
 
         <div class="song-info">
-          <h1 class="song-title">Lost in the City Lights</h1>
-          <h2 class="song-artist">Cosmo Sheldrake</h2>
+          <h1 class="song-title" id="song-title">Lost in the City Lights</h1>
+          <h2 class="song-artist" id="song-artist">Cosmo Sheldrake</h2>
         </div>
 
         <section class="song-timer">
           <div class="time">
-            <div>02:23</div>
-            <div>03:15</div>
+            <div id="current-time">02:23</div>
+            <div id="duration">03:15</div>
           </div>
-          <progress class="bar" max="100" value="70"></progress>
+          <progress id="time-bar" class="bar" max="100" value="0"></progress>
         </section>
 
         <section class="song-controller">
-          <button class="previous-btn" type="button">
+          <button class="previous-btn" type="button" id="previous-btn">
             <img src="./images/Stop_and_play_fill.svg" alt="Previous song" />
           </button>
-          <button class="play-btn" type="button">
+
+          <button class="pause-btn hide" type="button" id="pause-btn">
+            <img src="./images/Pause_fill.svg" alt="Pause song" />
+          </button>
+          <button class="play-btn" type="button" id="play-btn">
             <img src="./images/Play_fill.svg" alt="Play song" />
           </button>
-          <button class="next-btn" type="button">
+
+          <button class="next-btn" type="button" id="next-btn">
             <img
               src="./images/Stop_and_play_fill_reverse.svg"
               alt="Next song"
             />
           </button>
         </section>
+
+        <audio id="music" src="" type="audio/mp3"></audio>
       </article>
     </main>
+
+    <script src="./js/musicmetadata.js"></script>
+    <script src="./js/index.js"></script>
   </body>
 </html>

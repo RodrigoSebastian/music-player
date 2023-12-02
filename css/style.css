@@ -28,6 +28,7 @@ a {
 * {
   box-sizing: border-box;
   font-family: "Inter", sans-serif;
+  user-select: none;
 }
 
 body {
@@ -55,10 +56,11 @@ main {
 }
 
 .song-image img {
-  width: 100%;
-  height: 100%;
+  width: calc(var(--song-card-width) - 2.4rem);
+  height: calc(var(--song-card-width) - 2.4rem);
   object-fit: contain;
   border-radius: 30px;
+  transition: ease all 0.25s;
 }
 
 .song-info {
@@ -70,12 +72,19 @@ main {
   font-size: 1rem;
   color: var(--text-color);
   font-weight: bold;
+  user-select: text;
 }
 
 .song-artist {
   font-size: 0.75rem;
   color: var(--second-text-color);
   font-weight: bold;
+  user-select: text;
+}
+
+.song-timer {
+  display: flex;
+  flex-direction: column;
 }
 
 .song-timer .time {
@@ -121,7 +130,8 @@ main {
   display: flex;
 }
 
-.song-controller .play-btn {
+.song-controller .play-btn,
+.song-controller .pause-btn {
   width: 3rem;
   height: 3rem;
   display: flex;
@@ -135,10 +145,15 @@ main {
   margin: 0 1rem;
 }
 
-.song-controller .play-btn:hover {
+.song-controller .play-btn:hover,
+.song-controller .pause-btn:hover {
   background-color: var(--button-accent-color);
   box-shadow: 0 0 10px var(--button-accent-color),
     0 0 1px var(--button-accent-color), 0 0 2px var(--button-accent-color);
+}
+
+.hide {
+  display: none !important;
 }
 
 .song-controller .next-btn:hover,
